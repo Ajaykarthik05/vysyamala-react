@@ -159,6 +159,8 @@ const PartnerSettings: React.FC = () => {
   const onSubmit: SubmitHandler<PartnerSettingsInputs> = async (data) => {
     setIsSubmitting(true);
     console.log('Form data:', data);
+    const starIdsString = selectedStarIds.join(',');
+    console.log(starIdsString);
 
     try {
       const profileId = sessionStorage.getItem("profile_id_new");
@@ -184,6 +186,7 @@ const PartnerSettings: React.FC = () => {
         pref_chevvai: data.chevvai,
         pref_ragukethu: data.rehu,
         pref_foreign_intrest: foreignInterestValue,
+        pref_porutham_star:starIdsString,
         status: "1"
       };
 
@@ -337,6 +340,9 @@ const PartnerSettings: React.FC = () => {
 
   const handleCheckboxChange = (updatedIds: string[]) => {
     setSelectedStarIds(updatedIds);
+    console.log(selectedStarIds);
+ 
+
   };
 
   useEffect(() => {

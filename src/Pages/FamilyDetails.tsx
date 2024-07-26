@@ -277,6 +277,8 @@ const FamilyDetails: React.FC = () => {
     fetchFamilyStatus();
   }, []);
 
+
+
   useEffect(() => {
     const fetchFamilyValue = async () => {
       try {
@@ -291,6 +293,8 @@ const FamilyDetails: React.FC = () => {
 
     fetchFamilyValue();
   }, []);
+
+  
 
   const buttonClass = (isSelected: boolean) => isSelected ? "bg-secondary text-white" : "border-gray hover:bg-secondary hover:text-white";
 

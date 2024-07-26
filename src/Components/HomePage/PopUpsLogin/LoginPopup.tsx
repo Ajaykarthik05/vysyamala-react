@@ -11,9 +11,7 @@ import config from '../../../API'; // Import the configuration file
 // ZOD Schema with updated regex validations
 const schema = zod.object({
     profileID: zod.string().min(1, 'Profile ID is required'),
-    password: zod.string()
-        .min(8, 'Password must be at least 8 characters')
-        .regex(/^(?=.*[A-Z])(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/, 'Password must contain at least one uppercase letter and one special character'),
+    password: zod.string().min(1,'password is requird')
 }).required();
 
 interface LoginPopUpProps {
